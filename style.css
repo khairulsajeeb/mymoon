@@ -1,0 +1,14 @@
+.btnGrp{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+button{
+  background: seagreen;
+  border: 0;
+  color:  #fff;
+}
+h1{
+  background: linear-gradient(90deg, seagreen, royalblue);
+  color: transparent;
+  background-clip: text;
+}

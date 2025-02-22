@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Moon in Different Resolution</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 90%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>See Moon in Different Resolution</h1>
+    <div class="btnGrp">
+    <button onclick="showImage('240p')">240p</button>
+    <button onclick="showImage('360p')">360p</button>
+    <button onclick="showImage('720p')">720p</button>
+    <button onclick="showImage('1080p')" id="playBtn">1080p</button>
+    </div>
+
+    <div>
+        <img id="displayImage" src="moon.png" alt="Click a button to view an image">
+    </div>
+    
+    
+
+    <script>
+    let audio = new Audio('./audio.mp3')
+
+function playMusic() {
+  audio.play();
+  audio.loop = true;
+}
+let playBtn = document.querySelector('#playBtn')
+playBtn.addEventListener('click', playMusic)
+        function showImage(resolution) {
+            const imageUrls = {
+                '240p': '240p.jpeg',
+                '360p': '360p.jpeg',
+                '720p': '720p.jpeg',
+                '1080p': 'gif.gif'
+            };
+
+            const imgElement = document.getElementById('displayImage');
+            imgElement.src = imageUrls[resolution];
+            imgElement.alt = `${resolution} Image`;
+        }
+    </script>
+
+</body>
+</html>
