@@ -24,10 +24,27 @@
             border: 2px solid #ccc;
             border-radius: 8px;
         }
+        
+        #warning {
+  height: 100vh;
+  width: 100%;
+  color: indianred;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
     </style>
 </head>
 <body>
-
+    <div id="warning">
+      Your internet connection is slow. <br />
+      Please wait while all contents are loading......
+    </div>
     <h1>See Moon in Different Resolution</h1>
     <div class="btnGrp">
     <button onclick="showImage('240p')">240p</button>
@@ -63,6 +80,13 @@ playBtn.addEventListener('click', playMusic)
             imgElement.src = imageUrls[resolution];
             imgElement.alt = `${resolution} Image`;
         }
+        
+        let warning = document.querySelector('#warning');
+
+window.addEventListener("load", () => {
+  warning.style.display = 'none';
+})
+
     </script>
 
 </body>
